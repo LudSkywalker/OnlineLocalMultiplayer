@@ -12,7 +12,6 @@ app.get("/", (req, res) => {
 io.on("connection", (socket) => {
 	console.log("a user connected");
 	socket.on("key", (key) => {
-        console.log(key);
 		io.emit("key",key);
 	});
 });
