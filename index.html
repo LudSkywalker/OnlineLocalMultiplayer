@@ -15,7 +15,7 @@
 		var ocupadod = 0;
 		var ocupadou = 0;
 		document.onkeydown = function (evt) {
-			if (ocupadod < 5) {
+			if (ocupadod < 3) {
 				ocupadod += 1;
 				evt = evt || window.event;
 				var charCode = evt.keyCode || evt.which;
@@ -27,7 +27,7 @@
 			}
 		};
 		document.onkeyup = function (evt) {
-			if (ocupadou < 5) {
+			if (ocupadou < 3) {
 				ocupadou += 1;
 				evt = evt || window.event;
 				var charCode = evt.keyCode || evt.which;
