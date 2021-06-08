@@ -7,21 +7,35 @@
 		<title>Document</title>
 	</head>
 	<body>
-        <input type="text">
-    </body>
+		<input type="text" />
+	</body>
 	<script src="/socket.io/socket.io.js"></script>
 	<script>
 		var socket = io();
+		var ocupadod = 0;
+		var ocupadou = 0;
 		document.onkeydown = function (evt) {
-			evt = evt || window.event;
-			var charCode = evt.keyCode || evt.which;
-			console.log( charCode);
-			socket.emit("keyd",  charCode);
+			if (ocupadod == 0) {
+				ocupadod = 1;
+				evt = evt || window.event;
+				var charCode = evt.keyCode || evt.which;
+				console.log(charCode);
+				socket.emit("keyd", charCode);
+				setTimeout(() => {
+					ocupadod = 0;
+				}, 300);
+			}
 		};
 		document.onkeyup = function (evt) {
-			evt = evt || window.event;
-			var charCode = evt.keyCode || evt.which;
-			socket.emit("keyu", charCode);
+			if (ocupadou == 0) {
+				ocupadou = 1;
+				evt = evt || window.event;
+				var charCode = evt.keyCode || evt.which;
+				socket.emit("keyu", charCode);
+				setTimeout(() => {
+					ocupadou = 0;
+				}, 300);
+			}
 		};
 	</script>
 </html>
