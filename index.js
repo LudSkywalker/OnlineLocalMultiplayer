@@ -10,13 +10,17 @@ app.get("/", (req, res) => {
 });
 
 io.on("connection", (socket) => {
-	console.log("a user connected");
-	socket.on("key", (key) => {
-		io.emit("key",key);
+	//	console.log("a user connected");
+	socket.on("keyd", (key) => {
+		io.emit("keyd", key);
+	});
+	socket.on("keyu", (key) => {
+		io.emit("keyu", key);
 	});
 });
 
-server.listen(process.env.PORT?process.env.PORT:3000, () => {
-	console.log(`listening on port:${process.env.PORT?process.env.PORT:
-    3000}`);
+server.listen(process.env.PORT ? process.env.PORT : 3000, () => {
+	console.log(
+		`listening on port:${process.env.PORT ? process.env.PORT : 3000}`
+	);
 });

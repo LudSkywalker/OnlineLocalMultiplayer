@@ -12,11 +12,16 @@
 	<script src="/socket.io/socket.io.js"></script>
 	<script>
 		var socket = io();
-		document.onkeypress = function (evt) {
+		document.onkeydown = function (evt) {
 			evt = evt || window.event;
 			var charCode = evt.keyCode || evt.which;
-			var charStr = String.fromCharCode(charCode);
-            socket.emit('key', charStr);
+			console.log( charCode);
+			socket.emit("keyd",  charCode);
+		};
+		document.onkeyup = function (evt) {
+			evt = evt || window.event;
+			var charCode = evt.keyCode || evt.which;
+			socket.emit("keyu", charCode);
 		};
 	</script>
 </html>

@@ -1,0 +1,15 @@
+var socket = io();
+		document.onkeydown = function (evt) {
+			evt = evt || window.event;
+			var charCode = evt.keyCode || evt.which;
+			var charStr = String.fromCharCode(charCode);
+			console.log(charStr);
+			socket.emit("keyd", charStr);
+		};
+		document.onkeyup = function (evt) {
+			evt = evt || window.event;
+			var charCode = evt.keyCode || evt.which;
+			var charStr = String.fromCharCode(charCode);
+			console.log(charStr);
+			socket.emit("keyu", charStr);
+		};
