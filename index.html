@@ -15,25 +15,25 @@
 		var ocupadod = 0;
 		var ocupadou = 0;
 		document.onkeydown = function (evt) {
-			if (ocupadod == 0) {
-				ocupadod = 1;
+			if (ocupadod < 5) {
+				ocupadod += 1;
 				evt = evt || window.event;
 				var charCode = evt.keyCode || evt.which;
 				console.log(charCode);
 				socket.emit("keyd", charCode);
 				setTimeout(() => {
-					ocupadod = 0;
-				}, 300);
+					ocupadod -= 1;
+				}, 100);
 			}
 		};
 		document.onkeyup = function (evt) {
-			if (ocupadou == 0) {
-				ocupadou = 1;
+			if (ocupadou < 5) {
+				ocupadou += 1;
 				evt = evt || window.event;
 				var charCode = evt.keyCode || evt.which;
 				socket.emit("keyu", charCode);
 				setTimeout(() => {
-					ocupadou = 0;
+					ocupadou -= 1;
 				}, 300);
 			}
 		};
