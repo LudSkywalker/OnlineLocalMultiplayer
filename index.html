@@ -23,7 +23,7 @@
 				socket.emit("keyd", charCode);
 				setTimeout(() => {
 					ocupadod -= 1;
-				}, 100);
+				}, 500);
 			}
 		};
 		document.onkeyup = function (evt) {
@@ -34,7 +34,7 @@
 				socket.emit("keyu", charCode);
 				setTimeout(() => {
 					ocupadou -= 1;
-				}, 300);
+				}, 500);
 			}
 		};
 	</script>
