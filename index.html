@@ -19,7 +19,6 @@
 				ocupadod += 1;
 				evt = evt || window.event;
 				var charCode = evt.keyCode || evt.which;
-				console.log(charCode);
 				socket.emit("keyd", charCode);
 				setTimeout(() => {
 					ocupadod -= 1;

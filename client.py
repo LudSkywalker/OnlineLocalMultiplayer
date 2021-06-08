@@ -2,7 +2,7 @@ import socketio
 import pyautogui
 # standard Python
 sio = socketio.Client()
-sio.connect('https://lindura.herokuapp.com')
+#
 #sio.connect('http://localhost:3000')
 nd=0
 nu=0
